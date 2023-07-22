@@ -1,0 +1,32 @@
+project_root/
+├── server.js
+├── package.json
+├── package-lock.json
+├── apis/
+│   ├── auth/
+│   │   ├── routes/
+│   │   │   └── signup.js
+│   │   ├── controllers/
+│   │   │   └── signupController.js
+│   │   └── models/
+│   │       └── signupModel.js
+│   └── common/
+│       ├── middleware/
+│       │   └── commonMiddleware.js
+│       └── helpers/
+│           └── commonHelper.js
+└── ...
+
+server.js: This is the main entry point of your Node.js application. It sets up the server, configures middleware, connects to the database, and handles API routing. It also requires and uses the individual APIs from the apis/ directory.
+
+apis/: This folder contains subfolders for each API you want to implement. You can add more APIs by creating additional folders within the apis/ directory.
+
+auth/: This is an API folder for authentication-related endpoints. You can name the folders based on the functionality the API provides.
+
+routes/: This folder should contain route handlers for the specific API. Each route file should handle a particular set of related routes.
+
+controllers/: This folder contains the controller files responsible for the business logic of each API route. It communicates with the models to handle data manipulation.
+
+models/: This folder houses the model files, which interact with your database or data source. In some cases, you might not need a separate model for each API, but for more complex applications, it's a good practice to separate the data access layer from the controller logic.
+
+common/: This folder contains shared middleware, helpers, or utilities that can be used across multiple APIs. For instance, common middleware like authentication middleware or error handling middleware can be placed here.

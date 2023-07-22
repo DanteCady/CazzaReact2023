@@ -14,11 +14,22 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    "plugins": [
+      [
+         "expo-camera",
+        {
+          "cameraPermission": "Allow $(Cazza) to access your camera."
+        }
+      ]
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "This app allows secure authentication log in using FaceID"
+      }
     },
     "android": {
       "adaptiveIcon": {
